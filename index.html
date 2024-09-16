@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code maxing</title>
+    <link rel="stylesheet" href="pastel-ghost.css">
+</head>
+<body>
+
+    <header class="header">
+        <img src="images/thapa_logo.png" alt="Code maxing -(nig)" class="logo">
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a class="navbar-link" href="#">Home</a></li>
+                <li><a class="navbar-link" href="#">About</a></li>
+                <li><a class="navbar-link" href="#">Services</a></li>
+                <li><a class="navbar-link" href="#">Gallery</a></li>
+                <li><a class="navbar-link" href="https://www.instagram.com/thapatechnical/" target="_blank">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-navbar-btn">
+            <ion-icon name="menu-outline" class="mobile-nav-icon"></ion-icon>
+            <ion-icon name="close-outline" class="mobile-nav-icon"></ion-icon>
+        </div>
+    </header>
+
+    <!-- Background Image Section -->
+    <div class="background-imgn"></div>
+
+    <section class="what-we-do">
+        <div class="container">
+            <h1 class="section-title">What We Do</h1>
+            <div class="features">
+                <div class="feature-item">
+                    <div class="background-image"></div>
+                    <div class="icon">&#128188;</div>
+                    <h2>Internship Opportunities</h2>
+                    <p>We connect aspiring professionals with top-tier companies offering internships that help build skills and industry knowledge.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="background-image"></div>
+                    <div class="icon">&#128200;</div>
+                    <h2>Talent Benchmarking</h2>
+                    <p>Our talent benchmarking system helps individuals understand where they stand in comparison to industry standards, providing feedback and insights for personal growth.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="background-image"></div>
+                    <div class="icon">&#128101;</div>
+                    <h2>Collaborative Teamwork</h2>
+                    <p>We promote collaboration through shared projects, team-building exercises, and virtual workspaces designed for seamless communication and teamwork.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="background-image"></div>
+                    <div class="icon">&#129302;</div>
+                    <h2>AI-Powered Chatbot Assistance</h2>
+                    <p>Our AI-powered chatbot is available 24/7 to guide users through their job search, answer career-related questions, and offer personalized recommendations.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="background-image"></div>
+                    <div class="icon">&#128187;</div>
+                    <h2>Job & Internship Matching</h2>
+                    <p>We match you with the best internship opportunities based on your skills and interests, ensuring you find the perfect fit for your career path.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="background-image"></div>
+                    <div class="icon">&#127891;</div>
+                    <h2>Skill Development & Certification</h2>
+                    <p>Develop your skills with our range of courses and certifications that enhance your employability and keep you ahead of industry trends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="talent-benchmark">
+        <div class="container">
+            <h1 class="section-title">Talent Benchmarking</h1>
+            <div class="benchmark-content">
+                <div class="benchmark-text">
+                    <h2>Where Do You Stand?</h2>
+                    <p>
+                        Discover how your skills compare to industry standards. Our Talent Benchmarking tool provides you with personalized feedback and insights that help you understand your strengths and areas for improvement.
+                    </p>
+                    <a href="benchmarkinterface.html" class="cta-button" onclick="transitionPage(event)">Get Started</a>
+                </div>
+                <div class="benchmark-chart">
+                    <img src="https://example.com/benchmark-chart.png" alt="Benchmark Chart( work on progress)">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .talent-benchmark {
+            background-color: #fff;
+            padding: 60px 20px;
+        }
+    
+        .talent-benchmark .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    
+        .talent-benchmark .section-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+    
+        .benchmark-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+    
+        .benchmark-text {
+            flex: 1;
+            max-width: 500px;
+            text-align: left;
+        }
+    
+        .benchmark-text h2 {
+            font-size: 2rem;
+            color:black;
+            margin-bottom: 20px;
+        }
+    
+        .benchmark-text p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+    
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color:black;
+            color: #fff;
+            border-radius: 30px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+    
+        .cta-button:hover {
+            background-color: lightblue;
+        }
+    
+        .benchmark-chart {
+            flex: 1;
+            max-width: 600px;
+        }
+    
+        .benchmark-chart img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+    
+        @media (max-width: 768px) {
+            .benchmark-content {
+                flex-direction: column;
+                text-align: center;
+            }
+    
+            .benchmark-text {
+                max-width: 100%;
+                text-align: center;
+            }
+    
+            .benchmark-chart {
+                max-width: 100%;
+            }
+    
+            .benchmark-text h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+    <h1 id="head-1">Virtual interview</h1>
+        <div class="interview-container">
+            <div class="interview-content">
+                <h2 class="interview-title">Virtual Interview Hub</h2>
+                <p class="interview-description">
+                    Welcome to the Virtual Interview Hub! Start your interview journey through multiple rounds. 
+                    Companies will evaluate your performance and assign scores. Clear the target score to advance 
+                    to the next rounds, including technical interviews, collaborative work platforms, and more!
+                </p>
+                <button class="interview-start-btn" onclick="location.href='virtual2.html'">Start Now</button>
+            </div>
+            <div class="interview-image">
+                <div class="interview-image-text">Prepare for Your Interviews</div>
+            </div>
+        </div>
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="index.js"></script>
+    <section class="collab-space">
+        <div class="collab-container">
+            <h1 class="collab-title">Collaborative Workspace</h1>
+            <div class="collab-content">
+                <div class="collab-text">
+                    <h2>Collaborate in Real-Time</h2>
+                    <p>
+                        Seamlessly work with your team using real-time editing, task management, and integrated chat. Our advanced tools provide everything you need to succeed as a team.
+                    </p>
+                    <a href="#start-project" class="collab-btn">Start a New Project</a>
+                </div>
+                <div class="collab-image">
+                    <img src="https://example.com/modern-collaboration-image.png" alt="Collaborative Workspace" class="collab-img-effect">
+                </div>
+            </div>
+    
+            <div class="collab-features">
+                <h2>Next-Level Features</h2>
+                <div class="collab-feature-list">
+                    <div class="collab-feature-item">
+                        <div class="collab-icon-wrapper">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Real-Time Collaboration</h3>
+                        <p>Edit, share, and give feedback instantly with your team across the globe.</p>
+                    </div>
+                    <div class="collab-feature-item">
+                        <div class="collab-icon-wrapper">
+                            <i class="fas fa-share-square"></i>
+                        </div>
+                        <h3>Easy File Sharing</h3>
+                        <p>Upload and manage files effortlessly from any device, anytime.</p>
+                    </div>
+                    <div class="collab-feature-item">
+                        <div class="collab-icon-wrapper">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Advanced Task Management</h3>
+                        <p>Stay organized with custom task assignments, priorities, and deadlines.</p>
+                    </div>
+                    <div class="collab-feature-item">
+                        <div class="collab-icon-wrapper">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Integrated Live Chat</h3>
+                        <p>Discuss in real-time, with built-in messaging for instant communication.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="collab-projects">
+                <h1>Your Projects</h1>
+                <div class="collab-project-grid">
+                    <div class="collab-project-card">
+                        <div class="collab-project-header">
+                            <h3>Project One</h3>
+                            <p>Team: 5 Members</p>
+                        </div>
+                        <div class="collab-project-details">
+                            <p>Deadline: Oct 10, 2024</p>
+                            <a href="#view-project" class="collab-btn">View Project</a>
+                        </div>
+                    </div>
+    
+                    <div class="collab-project-card">
+                        <div class="collab-project-header">
+                            <h3>Project Two</h3>
+                            <p>Team: 8 Members</p>
+                        </div>
+                        <div class="collab-project-details">
+                            <p>Deadline: Nov 1, 2024</p>
+                            <a href="#view-project" class="collab-btn">View Project</a>
+                        </div>
+                    </div>
+                    <!-- More project cards -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="button-section" style="text-align: center; margin-top: 50px;">
+        <!-- Place the button here -->
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Chatbot Assistance Interface</title>
+            <style>
+                /* General Styling */
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+        
+                body {
+                    font-family: 'Poppins', sans-serif;
+                    background-color: #f5f7fa; /* or inherit background of the existing website */
+                }
+        
+                .chatbot-wrapper {
+                    max-width: 600px;
+                    margin: 40px auto;
+                    padding: 40px;
+                    background-color: #fff;
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                    border-radius: 15px;
+                    text-align: center;
+                }
+        
+                .chatbot-icon {
+                    width: 120px;
+                    height: 120px;
+                    background: #4a90e2;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 auto 25px auto;
+                    transition: all 0.3s ease-in-out;
+                }
+        
+                .chatbot-icon img {
+                    width: 60%;
+                    height: auto;
+                    filter: invert(1);
+                }
+        
+                h1 {
+                    font-size: 2.4em;
+                    color: #333;
+                    margin-bottom: 15px;
+                }
+        
+                p {
+                    font-size: 1.1em;
+                    color: #666;
+                    line-height: 1.8;
+                    margin-bottom: 20px;
+                }
+        
+                /* Modern Button Styling */
+                .modern-button {
+                    display: inline-block;
+                    background-color: black;
+                    color: #fff;
+                    padding: 20px 80px;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    text-align: center;
+                    border: none;
+                    border-radius: 50px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    text-decoration: none;
+                    letter-spacing: 2px;
+                }
+        
+                .modern-button:hover {
+                    background-color: #2980b9;
+                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+                    transform: translateY(-5px);
+                }
+        
+                .modern-button:focus {
+                    outline: none;
+                    box-shadow: 0 0 0 5px rgba(52, 152, 219, 0.4);
+                }
+        
+                /* Responsive Design */
+                @media screen and (max-width: 768px) {
+                    .chatbot-wrapper {
+                        padding: 20px;
+                    }
+        
+                    h1 {
+                        font-size: 2em;
+                    }
+        
+                    p {
+                        font-size: 1em;
+                    }
+        
+                    .chatbot-icon {
+                        width: 100px;
+                        height: 100px;
+                    }
+        
+                    .chatbot-icon img {
+                        width: 55%;
+                    }
+        
+                    .modern-button {
+                        padding: 15px 60px;
+                        font-size: 1.2rem;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+        
+            <!-- Chatbot Assistant Section -->
+            <div class="chatbot-wrapper">
+                <div class="chatbot-section">
+                    <div class="chatbot-icon">
+                        <img src="chat-icon.png" alt="Chatbot Icon">
+                    </div>
+                    <h1>Welcome to Your Virtual Assistant</h1>
+                    <p>Your AI chatbot is here to assist you. Ask anything or get started when you’re ready!</p>
+                    <!-- Modern Chatbot Assistance Button -->
+                    <a href="dingdongditch.html" class="modern-button">Chat Bot Assistant</a>
+                </div>
+            </div>
+            <div class="main-container">
+                <header class="site-header">
+                    <h1>Project Repository</h1>
+                    <p>Upload, showcase, and explore completed projects.</p>
+                </header>
+        
+                <section class="upload-area">
+                    <h2>Submit Your Project</h2>
+                    <form class="submission-form" action="submit_project.php" method="POST" enctype="multipart/form-data">
+                        <label for="projTitle">Project Title:</label>
+                        <input type="text" id="projTitle" name="projectTitle" placeholder="Enter project title" required>
+        
+                        <label for="projDesc">Project Description:</label>
+                        <textarea id="projDesc" name="projectDescription" placeholder="Describe your project" required></textarea>
+        
+                        <label for="projTags">Tags (optional):</label>
+                        <input type="text" id="projTags" name="projectTags" placeholder="Add tags (e.g., team, solo, design)">
+        
+                        <label for="projFile">Upload Project File:</label>
+                        <input type="file" id="projFile" name="projectFile" required>
+        
+                        <button type="submit" class="submit-button">Upload Project</button>
+                    </form>
+                </section>
+        
+                <section class="projects-gallery">
+                    <h2>Discover Projects</h2>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search projects...">
+                        <button class="search-button">Search</button>
+                    </div>
+        
+                    <div class="projects-list">
+                        <!-- Example project cards -->
+                        <div class="project-item">
+                            <h3>Project Title 1</h3>
+                            <p>Short description of the project...</p>
+                            <button class="view-button">View Project</button>
+                        </div>
+        
+                        <div class="project-item">
+                            <h3>Project Title 2</h3>
+                            <p>Short description of the project...</p>
+                            <button class="view-button">View Project</button>
+                        </div>
+        
+                        <!-- More project cards will be dynamically added here -->
+                    </div>
+                </section>
+            </div>
+        </body>
+        </html>
+        
+    </section>
+</body>
+</html>

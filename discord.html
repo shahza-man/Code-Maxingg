@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord-Like Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            background-color: #2C2F33;
+            color: white;
+        }
+
+        /* Sidebar (Groups/Servers) */
+        .sidebar {
+            width: 80px;
+            background-color: #23272A;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            gap: 20px;
+            overflow-y: auto;
+        }
+
+        .server-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #7289DA;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .server-icon:hover {
+            background-color: #99AAB5;
+        }
+
+        .add-group {
+            background-color: #43B581;
+            cursor: pointer;
+            border-radius: 50%;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .add-group:hover {
+            background-color: #3AB07F;
+        }
+
+        /* Main Chat Window */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #36393F;
+        }
+
+        .channel-header {
+            height: 60px;
+            background-color: #2F3136;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 18px;
+            border-bottom: 1px solid #42454A;
+        }
+
+        .messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .message {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #7289DA;
+        }
+
+        .message-content {
+            background-color: #42454A;
+            padding: 10px 15px;
+            border-radius: 8px;
+            max-width: 60%;
+        }
+
+        .message-content p {
+            margin: 0;
+            color: #FFFFFF;
+        }
+
+        /* Input Area */
+        .message-input {
+            height: 60px;
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #42454A;
+        }
+
+        .message-input input {
+            flex: 1;
+            background-color: #40444B;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            color: white;
+        }
+
+        .message-input input:focus {
+            outline: none;
+        }
+
+        .message-input button {
+            margin-left: 10px;
+            background-color: #7289DA;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* User Info Sidebar */
+        .user-info {
+            width: 200px;
+            background-color: #2F3136;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .user-profile .avatar {
+            width: 50px;
+            height: 50px;
+            background-color: #99AAB5;
+        }
+
+        .user-profile .name {
+            font-size: 16px;
+            color: white;
+        }
+
+        .user-profile button {
+            padding: 8px 15px;
+            background-color: #43B581;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Channel List */
+        .channel-list {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #42454A;
+            border-radius: 10px;
+        }
+
+        .channel-list h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .channel-list ul {
+            list-style: none;
+        }
+
+        .channel-list ul li {
+            padding: 8px;
+            background-color: #7289DA;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .channel-list ul li:hover {
+            background-color: #99AAB5;
+        }
+
+        /* Meeting Section */
+        .meeting-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #42454A;
+            border-radius: 10px;
+        }
+
+        .meeting-section button {
+            background-color: #F04747;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .meeting-section button:hover {
+            background-color: #C23737;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar: Group/Server List -->
+    <div class="sidebar">
+        <div class="server-icon"></div>
+        <div class="server-icon"></div>
+        <div class="server-icon"></div>
+        <div class="add-group" onclick="addGroup()">+</div>
+    </div>
+
+    <!-- Main Chat Window -->
+    <div class="main-content">
+        <!-- Channel Header -->
+        <div class="channel-header" id="channel-header">
+            # general
+        </div>
+
+        <!-- Messages Area -->
+        <div class="messages" id="messages">
+            <div class="message">
+                <div class="avatar"></div>
+                <div class="message-content">
+                    <p>Welcome to the channel!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="message-input">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- User Info Sidebar -->
+    <div class="user-info">
+        <!-- User Profile -->
+        <div class="user-profile">
+            <div class="avatar"></div>
+            <div class="name">Username</div>
+        </div>
+        
+        <!-- Channel List -->
+        <div class="channel-list">
+            <h3>Channels</h3>
+            <ul id="channel-list">
+                <li onclick="switchChannel('general')"># general</li>
+                <li onclick="switchChannel('meetings')"># meetings</li>
+            </ul>
+        </div>
+
+        <!-- Meeting Section -->
+        <div class="meeting-section">
+            <h3>Meeting Controls</h3>
+            <button onclick="startMeeting()">Start Meeting</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for adding functionalities
+
+        // Switch between channels
+        function switchChannel(channel) {
+            document.getElementById('channel-header').textContent = `# ${channel}`;
+            document.getElementById('messages').innerHTML = '';
+            addMessage(`You have switched to #${channel} channel.`);
+        }
+
+        // Send a message
+        function sendMessage() {
+            const messageInput = document.getElementById('message-input');
+            const messageText = messageInput.value;
+
+            if (messageText.trim()) {
+                addMessage(messageText);
+                messageInput.value = '';
+            }
+        }
+
+        // Add message to chat
+        function addMessage(messageText) {
+            const messagesDiv = document.getElementById('messages');
+
+            const newMessage = document.createElement('div');
+            newMessage.classList.add('message');
+
+            const avatarDiv = document.createElement('div');
+            avatarDiv.classList.add('avatar');
+
+            const messageContentDiv = document.createElement('div');
+            messageContentDiv.classList.add('message-content');
+
+            const messageParagraph = document.createElement('p');
+            messageParagraph.textContent = messageText;
+
+            messageContentDiv.appendChild(messageParagraph);
+            newMessage.appendChild(avatarDiv);
+            newMessage.appendChild(messageContentDiv);
+            messagesDiv.appendChild(newMessage);
+
+            // Scroll to the latest message
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        // Add a new group/server
+        function addGroup() {
+            alert('Feature to add new groups will be implemented!');
+        }
+
+        // Start a meeting
+        function startMeeting() {
+            alert('Starting a meeting...');
+        }
+    </script>
+
+</body>
+</html>

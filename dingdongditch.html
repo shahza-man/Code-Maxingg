@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Chatbot</title>
+    <style>
+        /* Chatbot Section */
+        .advanced-chatbot-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+        }
+
+        /* Chatbot Container */
+        .advanced-chatbot-container {
+            width: 360px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Chatbot Header */
+        .advanced-chatbot-header {
+            background-color: #3498db;
+            padding: 20px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #2980b9;
+            position: relative;
+        }
+
+        .advanced-chatbot-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #27ae60;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        /* Chatbot Body */
+        .advanced-chatbot-body {
+            padding: 20px;
+            height: 400px;
+            overflow-y: scroll;
+            background-color: #f7f9fc;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .advanced-chatbot-body .message {
+            padding: 12px 15px;
+            border-radius: 10px;
+            max-width: 75%;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .advanced-chatbot-body .user-message {
+            background-color: #3498db;
+            color: #fff;
+            align-self: flex-end;
+        }
+
+        .advanced-chatbot-body .bot-message {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            align-self: flex-start;
+        }
+
+        /* Chatbot Footer */
+        .advanced-chatbot-footer {
+            padding: 15px;
+            background-color: #fff;
+            display: flex;
+            border-top: 2px solid #ecf0f1;
+        }
+
+        .advanced-chatbot-footer input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .advanced-chatbot-footer input:focus {
+            border-color: #3498db;
+        }
+
+        .advanced-chatbot-footer button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .advanced-chatbot-footer button:hover {
+            background-color: #2980b9;
+        }
+
+        .advanced-chatbot-footer button i {
+            font-size: 1.2rem;
+        }
+
+        /* Scrollbar */
+        .advanced-chatbot-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .advanced-chatbot-body::-webkit-scrollbar-thumb {
+            background-color: rgba(52, 152, 219, 0.5);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section class="advanced-chatbot-section">
+        <div class="advanced-chatbot-container">
+            <div class="advanced-chatbot-header">
+                <h3>AI Assistant</h3>
+                <div class="status">
+                    <span class="status-dot"></span> Online
+                </div>
+            </div>
+            <div class="advanced-chatbot-body" id="chatbot-body">
+                <!-- Chat messages will be displayed here -->
+            </div>
+            <div class="advanced-chatbot-footer">
+                <input type="text" id="user-input" placeholder="Ask me anything..." />
+                <button id="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('send-btn').addEventListener('click', sendMessage);
+        document.getElementById('user-input').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            if (userInput.trim() === '') return;
+
+            // Display user message
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('message', 'user-message');
+            userMessage.innerText = userInput;
+            document.getElementById('chatbot-body').appendChild(userMessage);
+
+            // Clear input
+            document.getElementById('user-input').value = '';
+
+            // Scroll to the bottom
+            document.getElementById('chatbot-body').scrollTop = document.getElementById('chatbot-body').scrollHeight;
+
+            // Bot response (Static for demo purposes)
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.classList.add('message', 'bot-message');
+                botMessage.innerText = getBotResponse(userInput);
+                document.getElementById('chatbot-body').appendChild(botMessage);
+
+                // Scroll to the bottom
+                document.getElementById('chatbot-body').scrollTop = document.getElementById('chatbot-body').scrollHeight;
+            }, 1000);
+        }
+
+        function getBotResponse(input) {
+            const responses = {
+                'hello': 'Hi there! How can I help you today?',
+                'hi': 'Hello! How can I assist you?',
+                'help': 'Sure! What do you need help with?',
+                'bye': 'Goodbye! Have a great day!',
+                'thanks': 'You’re welcome!'
+            };
+
+            return responses[input.toLowerCase()] || "Sorry, I didn't understand that.";
+        }
+    </script>
+</body>
+</html>

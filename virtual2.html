@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Interview Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <! User Information Section -->
+  <div class="user-info">
+    <div class="user-card">
+      <img src="pexels-tima-miroshnichenko-5686019.jpg" alt="User Avatar" class="user-avatar">
+      <div class="user-details">
+        <h2>user</h2>
+        <p class="user-points">Current Points: 120</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="company-list">
+    <h2>Available Interviews</h2>
+    <div class="company-cards">
+    
+      <div class="company-card">
+        <div class="card-content">
+          <h3>Apple</h3>
+          <p class="role">Role: Front-End Developer</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 70%;"></div>
+          </div>
+          <p>Target: 85 points</p>
+          <p class="skills">Skills Required: HTML, CSS, JavaScript</p>
+          <button class="view-job-desc">View Job Description</button>
+          <button class="view-company">View Company Profile</button>
+          <button class="apply-later">Apply Later</button>
+          <button class="start-interview">Start Interview</button>
+        </div>
+      </div>
+
+
+      <div class="company-card">
+        <div class="card-content">
+          <h3>Apple</h3>
+          <p class="role">Role: Front-End Developer</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 70%;"></div>
+          </div>
+          <p>Target: 85 points</p>
+          <p class="skills">Skills Required: HTML, CSS, JavaScript</p>
+          <button class="view-job-desc">View Job Description</button>
+          <button class="view-company">View Company Profile</button>
+          <button class="apply-later">Apply Later</button>
+          <button class="start-interview">Start Interview</button>
+        </div>
+      </div>
+
+
+     
+
+
+      <!-- Company 2 - Amazon -->
+      <div class="company-card">
+        <div class="card-content">
+          <h3>accenture</h3>
+          <p class="role">Role: Back-End Developer</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 60%;"></div>
+          </div>
+          <p>Target: 95 points</p>
+          <p class="skills">Skills Required: Java, AWS, Docker</p>
+          <button class="view-job-desc">View Job Description</button>
+          <button class="view-company">View Company Profile</button>
+          <button class="apply-later">Apply Later</button>
+          <button class="start-interview">Start Interview</button>
+        </div>
+      </div>
+
+      <!-- Company 2 - Amazon -->
+      <div class="company-card">
+        <div class="card-content">
+          <h3>Amazon</h3>
+          <p class="role">Role: Back-End Developer</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 60%;"></div>
+          </div>
+          <p>Target: 95 points</p>
+          <p class="skills">Skills Required: Java, AWS, Docker</p>
+          <button class="view-job-desc">View Job Description</button>
+          <button class="view-company">View Company Profile</button>
+          <button class="apply-later">Apply Later</button>
+          <button class="start-interview">Start Interview</button>
+        </div>
+      </div>
+
+      <!-- Company 3 - Tesla -->
+      <div class="company-card">
+        <div class="card-content">
+          <h3>Google</h3>
+          <p class="role">Role: Full-Stack Engineer</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 80%;"></div>
+          </div>
+          <p>Target: 110 points</p>
+          <p class="skills">Skills Required: Python, Node.js, React</p>
+          <button class="view-job-desc">View Job Description</button>
+          <button class="view-company">View Company Profile</button>
+          <button class="apply-later">Apply Later</button>
+          <button class="start-interview">Start Interview</button>
+        </div>
+      </div>
+
+      <!-- Add more companies as needed -->
+    </div>
+  </div>
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Interview Feedback</title>
+      <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+      <div class="feedback-container">
+          <div class="candidate-info">
+              <h2>marha</h2>
+              <p>Position: Software Engineer</p>
+              <p>Company: TechCorp</p>
+          </div>
+          <div class="score-section">
+              <div class="score">
+                  <span>Technical Skills</span>
+                  <span class="points">85/100</span>
+              </div>
+              <div class="score">
+                  <span>Problem Solving</span>
+                  <span class="points">90/100</span>
+              </div>
+              <div class="score">
+                  <span>Communication</span>
+                  <span class="points">80/100</span>
+              </div>
+              <div class="score">
+                  <span>Cultural Fit</span>
+                  <span class="points">75/100</span>
+              </div>
+          </div>
+          <div class="overall-score">
+              <h3>Overall Score</h3>
+              <span class="points-total">82.5/100</span>
+          </div>
+          <div class="feedback-summary">
+              <h3>Feedback Summary</h3>
+              <p>marha demonstrated strong technical skills and problem-solving abilities. Communication could be improved slightly, and we recommend further assessment for cultural fit. Overall, a great candidate for the position.</p>
+          </div>
+      </div>
+  </body>
+  </html>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
+<style>
+  /* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  background: #05121d;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+.user-details h2 {
+  margin: 0;
+  font-size: 1.8em;
+  color: white;
+}
+
+.company-list h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #2f3542;
+  text-align: center;
+}
+
+.company-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.company-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.company-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  padding: 30px;
+  text-align: center;
+}
+
+.card-content h3 {
+  color: #2d3436;
+  font-size: 1.6em;
+  margin: 15px 0;
+  letter-spacing: 0.5px;
+}
+
+.role, .skills {
+  font-size: 1em;
+  color: #636e72;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #dfe6e9;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 10px;
+  background-color: #3a9dc5;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+button {
+  background-color: #3a9dc5;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+  width: 80%;
+}
+
+button:hover {
+  background-color: #3a67b3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+button.view-job-desc, button.view-company, button.apply-later {
+  background-color: #7ed6df;
+}
+
+button.start-interview {
+  background-color: #3a9dc5;
+}
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 16px;  
+  border: none;
+  border-radius: 25px;  
+  font-size: 0.9em;     
+  font-weight: 600;     
+  cursor: pointer;
+  margin: 8px 0;      
+  transition: background-color 0.3s ease;
+  width: 70%;          
+}
+
+button:hover {
+  background-color: #2980b9;
+  box-shadow: none;     
+}
+
+button.view-job-desc, button.view-company, button.apply-later {
+  background-color: #7ed6df;
+}
+
+button.start-interview {
+  background-color: #3498db;
+}
+.feedback-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+.header h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.feedback-card {
+    margin: 20px 0;
+}
+
+.candidate-info {
+    margin-bottom: 20px;
+}
+
+.candidate-info h2 {
+    color: #333;
+    font-size: 20px;
+}
+
+.candidate-info p {
+    color: #666;
+    font-size: 14px;
+}
+
+.score-section {
+    background-color: #f9fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.score {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.score:last-child {
+    border-bottom: none;
+}
+
+.score span {
+    font-size: 14px;
+}
+
+.points {
+    color: #2196f3;
+    font-weight: bold;
+}
+
+.overall-score {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.overall-score h3 {
+    color: #333;
+    font-size: 18px;
+}
+
+.points-total {
+    color: #2196f3;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.feedback-summary {
+    margin-top: 20px;
+}
+
+.feedback-summary h3 {
+    color: #333;
+    font-size: 18px;
+}
+
+.feedback-summary p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+.feedback-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    width: 90vw;
+    max-width: 1200px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-top: 50px;
+    margin: auto 50px;
+    margin-top: 50px;
+}
+
+.feedback-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.15);
+}
+
+.candidate-info {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.candidate-info h2 {
+    color: #444;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.candidate-info p {
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.score-section {
+    flex: 2;
+    background-color: #f9fafc;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    margin-right: 20px;
+}
+
+.score {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.score:last-child {
+    border-bottom: none;
+}
+
+.score span {
+    font-size: 16px;
+    color: #555;
+}
+
+.points {
+    color: #1976d2;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.overall-score {
+    flex: 1;
+    text-align: center;
+    padding-right: 20px;
+}
+
+.overall-score h3 {
+    color: #333;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.points-total {
+    color: #1976d2;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.feedback-summary {
+    flex: 2;
+    padding-left: 20px;
+    border-left: 2px solid #e0e0e0;
+}
+
+.feedback-summary h3 {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.feedback-summary p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+</style>
